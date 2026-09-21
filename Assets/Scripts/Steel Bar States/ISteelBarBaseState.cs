@@ -7,7 +7,6 @@ public interface ISteelBarBaseState
     public void ExitState(SteelBarController steelBar);
 
     public void OnCollisionEnter(SteelBarController steelBar, Collision collision);
-    public void OnTriggerEnter(SteelBarController steelBar, Collider other);
-    public void OntriggerStay(SteelBarController steelBar, Collider other);
-    public void OnTriggerExit(SteelBarController steelBar, Collider other);
+    public void OnCollisionStay(SteelBarController steelBar, Collision collision);
+    public void OnCollisionExit(SteelBarController steelBar, Collision collision);
 }

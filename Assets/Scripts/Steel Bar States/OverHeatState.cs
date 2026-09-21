@@ -3,7 +3,7 @@ using UnityEngine;
 public class OverHeatState : ISteelBarBaseState
 {
     private float timer = 0f;
-    private const float destroyTime = 30f;
+    private const float destroyTime = 2f;
     public void EnterState(SteelBarController steelBar)
     {
         Debug.Log("Steel bar is now overheat.");
@@ -22,15 +22,7 @@ public class OverHeatState : ISteelBarBaseState
     {
     }
 
-    public void OnTriggerEnter(SteelBarController steelBar, Collider other)
-    {
-    }
-
-    public void OnTriggerExit(SteelBarController steelBar, Collider other)
-    {
-    }
-
-    public void OntriggerStay(SteelBarController steelBar, Collider other)
+    public void OnCollisionExit(SteelBarController steelBar, Collision collision)
     {
     }
 
@@ -41,5 +33,9 @@ public class OverHeatState : ISteelBarBaseState
         {
             GameObject.Destroy(steelBar.gameObject);
         }
+    }
+
+    public void OnCollisionStay(SteelBarController steelBar, Collision collision)
+    {
     }
 }

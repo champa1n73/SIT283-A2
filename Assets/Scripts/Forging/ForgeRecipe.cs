@@ -7,6 +7,7 @@ public class ForgeRecipe : ScriptableObject
 {
     public ForgePart recipePart;
     public int requiredHammerHits;
-    public int requiredGrindAmount;
+    public float requiredQuenchTime;
+    public float requiredGrindTime;
     public GameObject finishedPrefab;
 }

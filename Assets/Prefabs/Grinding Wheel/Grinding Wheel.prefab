@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 90926974701419547}
   - component: {fileID: 5025006204651235136}
   - component: {fileID: 7442249822059799262}
-  - component: {fileID: 7766487935211636094}
+  - component: {fileID: 2488554243410372727}
   m_Layer: 9
   m_Name: Stone
   m_TagString: Untagged
@@ -131,8 +131,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7766487935211636094
-BoxCollider:
+--- !u!64 &2488554243410372727
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,9 +149,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000002, y: 2.0000005, z: 1.0000001}
-  m_Center: {x: 0.00000005960465, y: 1.1368684e-13, z: -0.00000008940696}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &745000495774610579
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ GameObject:
   - component: {fileID: 4991288439973555315}
   - component: {fileID: 3526713409945721375}
   - component: {fileID: 6430529802242898728}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +277,7 @@ GameObject:
   - component: {fileID: 6504262895102678323}
   - component: {fileID: 4374685648975822388}
   - component: {fileID: 3130315783613654286}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +389,7 @@ GameObject:
   - component: {fileID: 6990847647742777433}
   - component: {fileID: 3578367904204309302}
   - component: {fileID: 2256383923400445210}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +501,7 @@ GameObject:
   - component: {fileID: 8444860466094351739}
   - component: {fileID: 6665770881992513297}
   - component: {fileID: 272121168110836028}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +666,7 @@ GameObject:
   - component: {fileID: 2306953648199510387}
   - component: {fileID: 1867268535005477152}
   - component: {fileID: 6804785192790572059}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,8 +778,8 @@ GameObject:
   - component: {fileID: 8313698044749925522}
   - component: {fileID: 2903929407962547155}
   - component: {fileID: 6700024654624152253}
-  m_Layer: 9
-  m_Name: Cylinder
+  m_Layer: 13
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -924,7 +925,7 @@ GameObject:
   - component: {fileID: 3047215897996406968}
   - component: {fileID: 9039010470700115977}
   - component: {fileID: 442754153769525378}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1037,7 @@ GameObject:
   - component: {fileID: 5105263548920432267}
   - component: {fileID: 6542643469543538818}
   - component: {fileID: 4336461608992337547}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1149,7 @@ GameObject:
   - component: {fileID: 2154551840455001786}
   - component: {fileID: 3976291288727584032}
   - component: {fileID: 3878384880655487830}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,20 +2,21 @@ using UnityEngine;
 
 public class QuenchState : ISwordPartsStates
 {
-    private float timer = 0f;
-    private const float timeToGrind = 2f;
     public void EnterState(SwordPartsController swordPartsController)
     {
         Debug.Log("Entered Quench State");
-        foreach (MeshRenderer meshRenderer in swordPartsController.meshRenderers)
+        foreach (MeshRenderer meshRenderer in swordPartsController.GetMeshRenderers())
         {
             meshRenderer.material.color = swordPartsController.GetStateColor()["Quenched"];
         }
-        swordPartsController.grindingAmount = 0;
     }
 
     public void ExitState(SwordPartsController swordPartsController)
     {
+        if (swordPartsController.GetGrindingAudioSrc().isPlaying)
+        {
+            swordPartsController.GetGrindingAudioSrc().Stop();
+        }
     }
 
     public void FixedUpdateState(SwordPartsController swordPartsController)
@@ -24,15 +25,10 @@ public class QuenchState : ISwordPartsStates
 
     public void UpdateState(SwordPartsController swordPartsController)
     {
-        if (swordPartsController.isGrinding)
+        if (swordPartsController.IsGrinding())
         {
-            timer += Time.deltaTime;
-            if (timer > timeToGrind)
-            {
-                swordPartsController.grindingAmount++;
-                timer = 0f;
-            }
-            if (swordPartsController.grindingAmount >= swordPartsController.part.requiredGrindAmount)
+            swordPartsController.SetGrindingTime(swordPartsController.GetGrindingTime() + Time.deltaTime);
+            if (swordPartsController.GetGrindingTime() >= swordPartsController.GetCurrentRecipe().requiredGrindTime)
             {
                 swordPartsController.ChangeState(new GrindState());
             }

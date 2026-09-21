@@ -5,7 +5,7 @@ public class GrindState : ISwordPartsStates
     public void EnterState(SwordPartsController swordPartsController)
     {
         Debug.Log("Entered Grind State");
-        foreach (MeshRenderer meshRenderer in swordPartsController.meshRenderers)
+        foreach (MeshRenderer meshRenderer in swordPartsController.GetMeshRenderers())
         {
             meshRenderer.material.color = swordPartsController.GetStateColor()["Grinded"];
         }

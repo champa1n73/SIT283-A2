@@ -1,19 +1,17 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class HotState : ISteelBarBaseState
 {
-    private GameObject anvil;
+    private AnvilController anvil;
     public void EnterState(SteelBarController steelBar)
     {
         Debug.Log("Steel bar is now hot.");
         steelBar.GetMeshRenderer().material.color = steelBar.GetStateColor()["Hot"];
-        steelBar.hammerHits = 0;
     }
 
     public void UpdateState(SteelBarController steelBar)
     {
-        if (!steelBar.isInTheForge) { return; }
+        if (!steelBar.IsInTheForge()) { return; }
         steelBar.HeatUpSteelBar();
     }
 
@@ -27,41 +25,42 @@ public class HotState : ISteelBarBaseState
 
     public void OnCollisionEnter(SteelBarController steelBar, Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Anvil"))
-        {
-            anvil = collision.gameObject;
-        }
+
     }
 
-    public void OnTriggerEnter(SteelBarController steelBar, Collider other)
+    public void OnCollisionExit(SteelBarController steelBar, Collision collision)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Hammer"))
+    }
+
+    public void OnCollisionStay(SteelBarController steelBar, Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Anvil"))
         {
-            if (anvil == null)
+            anvil = collision.gameObject.GetComponent<AnvilController>();
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Hammer"))
+        {
+            if (!steelBar.IsOnAnvil())
             {
                 Debug.LogWarning("Steel bar is not on the anvil. Cannot forge.");
                 return;
             }
-            steelBar.hammerHits += 1;
-            if (steelBar.hammerHits >= steelBar.part.requiredHammerHits)
+            steelBar.SetHammerHits(steelBar.GetHammerHits() + 1);
+            if (steelBar.GetHammerHits() >= steelBar.GetCurrentRecipe().requiredHammerHits)
             {
-                GameObject forgedPart = GameObject.Instantiate(steelBar.part.finishedPrefab, steelBar.transform.position, steelBar.transform.rotation);
-                forgedPart.transform.forward = anvil.transform.forward;
+                GameObject forgedPart = GameObject.Instantiate(steelBar.GetCurrentRecipe().finishedPrefab, anvil.GetSpawnPoint().position, Quaternion.identity);
+                forgedPart.transform.right = anvil.transform.up;
+                anvil.SetDescText("Place a steel bar on the anvil to see its recipe.");
                 SwordPartsController swordPart = forgedPart.GetComponent<SwordPartsController>();
+                AnvilController.AddSpawnedSwordPart(swordPart);
+                ObjectSpawner.RemoveSpawnedSteelBar(steelBar);
                 if (swordPart != null)
                 {
-                    swordPart.part = steelBar.part;
+                    swordPart.SetRecipe(steelBar.GetCurrentRecipe());
                 }
                 GameObject.Destroy(steelBar.gameObject);
             }
         }
-    }
-
-    public void OntriggerStay(SteelBarController steelBar, Collider other)
-    {
-    }
-
-    public void OnTriggerExit(SteelBarController steelBar, Collider other)
-    {
     }
 }
