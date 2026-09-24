@@ -848,11 +848,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8164705571879959090, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
   m_PrefabInstance: {fileID: 2110845876}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &906465640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2407475614977046629, guid: 4eee6e7897fdf314791fa167757005bb, type: 3}
-  m_PrefabInstance: {fileID: 3502211400422678414}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &964920136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8164705571879959090, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
@@ -1760,7 +1755,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: objectsToDisableOnStart.Array.size
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[0]'
@@ -1777,27 +1772,27 @@ PrefabInstance:
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[3]'
       value: 
-      objectReference: {fileID: 906465640}
+      objectReference: {fileID: 811783652}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[4]'
       value: 
-      objectReference: {fileID: 811783652}
+      objectReference: {fileID: 2054145861}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[5]'
       value: 
-      objectReference: {fileID: 2054145861}
+      objectReference: {fileID: 1617043976}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[6]'
       value: 
-      objectReference: {fileID: 1617043976}
+      objectReference: {fileID: 1541727872}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[7]'
       value: 
-      objectReference: {fileID: 1541727872}
+      objectReference: {fileID: 1023208449}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[8]'
       value: 
-      objectReference: {fileID: 1023208449}
+      objectReference: {fileID: 4545075047531906698}
     - target: {fileID: 4035592394696553946, guid: 05ed3f5d6108f4145b3a46506ed780a7, type: 3}
       propertyPath: 'objectsToDisableOnStart.Array.data[9]'
       value: 

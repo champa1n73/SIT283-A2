@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        objectsToDisableOnStart.Add(SoundManager.Instance.gameObject);
+    }
+
     public void StartGame()
     {
         foreach (GameObject gameObj in objectsToDisableOnStart)
